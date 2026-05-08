@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Consultant | Thoothukudi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0f172a; /* Deep Navy */
+        --accent: #3b82f6; /* Bright Blue */
+        --gold: #f59e0b; /* Crypto Gold */
+        --text-light: #f8fafc;
+        --text-dark: #1e293b;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: #f1f5f9;
+      }
+
+      /* Hero Section */
+      header {
+        background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+        color: var(--text-light);
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      /* Enhanced Hero Styles */
+      .hero-container {
+        display: flex;
+        flex-direction: row; /* Side by side */
+        align-items: center;
+        justify-content: center;
+        gap: 50px; /* Space between photo and text */
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left; /* Align text to the left */
+      }
+
+      .profile-frame {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid var(--gold);
+        overflow: hidden;
+        background: #ccc; /* Placeholder color */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .profile-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 250px;
+      }
+
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .friend-name {
+        color: var(--gold);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+      }
+
+      .cta-btn.secondary {
+        background-color: transparent;
+        border: 2px solid white;
+      }
+
+      .cta-btn.secondary:hover {
+        background-color: white;
+        color: var(--primary);
+      }
+
+      .hero-content {
+        flex: 1; /* Takes up remaining space */
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 30px;
+      }
+
+      .cta-btn {
+        background-color: #25d366;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn-icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .contact-links {
+        display: flex;
+        gap: 15px;
+        justify-content: flex-start; /* Align buttons to the left */
+        flex-wrap: wrap;
+      }
+
+      .icon-img {
+        width: 60px; /* Adjust size as needed */
+        height: 60px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 768px) {
+        .hero-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+
+        .contact-links {
+          justify-content: center;
+        }
+
+        .hero-content h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* Services Section */
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 30px 20px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      /* Service Grid Styling */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center; /* Vertical center */
+        gap: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+      }
+
+      .card-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+      }
+
+      .card-text {
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--primary);
+      }
+
+      /* Specific Row Border Colors */
+      .finance {
+        border-left: 5px solid var(--gold);
+      }
+      .business {
+        border-left: 5px solid var(--accent);
+      }
+
+      /* Horizontal Card Styling */
+      .horizontal-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-top: 20px;
+        border-left: 5px solid #10b981; /* Green for Media/Events */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .card-icon.large {
+        font-size: 2.5rem;
+      }
+
+      .horizontal-content h3 {
+        margin-bottom: 5px;
+        color: var(--primary);
+      }
+
+      /* Responsive Tweak for Mobile */
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: 1fr; /* Stack on small screens */
+        }
+
+        .horizontal-card {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      .stat-item h2 {
+        color: var(--accent);
+        font-size: 2.2rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="hero-container">
+        <div class="profile-section">
+          <div class="profile-frame">
+            <img
+              src="profile.jpg"
+              alt="Mr. Siva Gunadurai Lingam"
+              class="profile-img"
+            />
+          </div>
+          <h2 class="friend-name" style="margin-top: 15px">
+            Mr. Gunadurai Lingam
+          </h2>
+        </div>
+
+        <div class="hero-content">
+          <h1>Expert Business & Financial Solutions</h1>
+          <p>
+            Empowering Thoothukudi with Crypto Investments, Loans, and Projector
+            Rentals
+          </p>
+
+          <div class="contact-links">
+            <a href="tel:+919443373062" class="cta-btn secondary">
+              <img src="icons/telephone.png" alt="Phone" class="btn-icon" /> +91
+              94433 73062
+            </a>
+            <a href="https://wa.me/919443373062" class="cta-btn">
+              <img src="icons/whatsapp.png" alt="WhatsApp" class="btn-icon" />
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="container">
+      <h2 class="section-title">Our Specialized Services</h2>
+
+      <div class="services-grid">
+        <div class="card finance">
+          <div class="card-icon">
+            <img src="icons/crypto.png" class="icon-img" alt="Crypto" />
+          </div>
+          <div class="card-text">Crypto Investment Advisory</div>
+        </div>
+        <div class="card finance">
+          <div class="card-icon">
+            <img src="icons/insurance.png" class="icon-img" alt="Insurance" />
+          </div>
+          <div class="card-text">Health Insurance</div>
+        </div>
+        <div class="card finance">
+          <div class="card-icon">
+            <img src="icons/loan.png" class="icon-img" alt="Loans" />
+          </div>
+          <div class="card-text">Bank Loan Assistance</div>
+        </div>
+
+        <div class="card business">
+          <div class="card-icon">
+            <img src="icons/msme.png" class="icon-img" alt="MSME" />
+          </div>
+          <div class="card-text">MSME Registration & Subsidies</div>
+        </div>
+        <div class="card business">
+          <div class="card-icon">
+            <img src="icons/rera.png" class="icon-img" alt="RERA" />
+          </div>
+          <div class="card-text">Govt. Approved RERA License Holder</div>
+        </div>
+        <div class="card business">
+          <div class="card-icon">
+            <img src="icons/asset.png" class="icon-img" alt="Asset" />
+          </div>
+          <div class="card-text">Asset Management</div>
+        </div>
+      </div>
+
+      <div class="horizontal-card">
+        <div class="card-icon">
+          <img
+            src="icons/projector.png"
+            style="width: 60px; height: 60px"
+            alt="Projector"
+          />
+        </div>
+        <div class="horizontal-content">
+          <h3>LCD Projector Rentals</h3>
+          <p>
+            High-quality projectors and screens for meetings, weddings, and
+            presentations. Doorstep setup across Thoothukudi.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
